@@ -22,7 +22,7 @@ namespace ToDoListMed_generiskaKlassOchJson
 
             while (running)
             {
-               
+
 
                 // Display the menu and get the selected option
                 string option = DisplayMenu();
@@ -30,8 +30,8 @@ namespace ToDoListMed_generiskaKlassOchJson
                 switch (option)
                 {
                     case "1. View All Tasks":
-                        toDoSystem.ViewTasks(toDoDB); 
-                      
+                        toDoSystem.ViewTasks(toDoDB);
+
                         break;
                     case "2. Add New Task":
                         toDoSystem.AddTask(toDoDB);
@@ -43,17 +43,18 @@ namespace ToDoListMed_generiskaKlassOchJson
                         toDoSystem.DeleteTask(toDoDB);
                         break;
                     case "5. Mark Tasks as Done":
-                            toDoSystem.MarkTasksAsDone(toDoDB);
+                        toDoSystem.MarkTasksAsDone(toDoDB);
                         break;
-                    case "0. Save and Exit":
-                        //   toDoSystem.SaveAllData(toDoDB);
+                    case "0. Exit":
+                        toDoSystem.Exit(toDoDB);
                         running = false;
                         break;
                     default:
                         AnsiConsole.MarkupLine("[red]Invalid choice! Please try again.[/]");
                         break;
                 }
-            } Console.Clear();
+            }
+            Console.Clear();
         }
 
 
@@ -71,7 +72,7 @@ namespace ToDoListMed_generiskaKlassOchJson
                 "3. Update Task",
                 "4. Delete Task",
                 "5. Mark Tasks as Done",
-                "0. Save and Exit"
+                "0. Exit"
                     }));
         }
 
