@@ -26,19 +26,15 @@ namespace ToDoListMed_generiskaKlassOchJson
 
         }
 
-        public void Updater(T updatedList)
+        public void Updater(List<T> _items, T updatedItem, Func<T, int> getId)
         {
-            var TheExistinItem = GetByID(updatedList.Id);
+            var TheExistinItem = _items.FirstOrDefault(item => getId(item) == getId(updatedItem)); ;
             if (TheExistinItem != null)
             {
                 int index = _items.IndexOf(TheExistinItem);
-                _items[index] = updatedList;
-                Console.WriteLine($"[blue]{typeof(T).Name} updated successfully![/]");
+                _items[index] = updatedItem;
             }
-            else
-            {
-                Console.WriteLine($"[red]{typeof(T).Name} not found![/]");
-            }
+           
         }
 
         public void RemoveThis(int id)
@@ -47,13 +43,9 @@ namespace ToDoListMed_generiskaKlassOchJson
             if (item != null)
             {
                 _items.Remove(item);
-                Console.WriteLine($"[red]{typeof(T).Name} deleted successfully![/]");
 
             }
-            else
-            {
-                Console.WriteLine($"[red]{typeof(T).Name} not found![/]");
-            }
+           
 
         }
         public void SaveAllData(ToDoDB toDoDB)

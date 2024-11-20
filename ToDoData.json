@@ -31,34 +31,24 @@
       "CompletedAt": "2024-11-20T12:40:30.5407054+01:00"
     },
     {
-      "Id": 4,
-      "Title": "hy",
-      "Description": "ki",
-      "DueDate": "2024-12-30T00:00:00",
-      "Priority": "Medium",
-      "IsCompleted": false,
-      "CreatedAt": "2024-11-20T10:36:34.6916601+01:00",
-      "CompletedAt": "2024-11-20T13:20:34.2832571+01:00"
-    },
-    {
-      "Id": 5,
-      "Title": "Washing dishws",
-      "Description": "Wash the glasses and put them back in place",
-      "DueDate": "2024-11-25T00:00:00",
-      "Priority": "Medium",
-      "IsCompleted": false,
-      "CreatedAt": "2024-11-20T10:47:35.9962011+01:00",
-      "CompletedAt": "2024-11-20T10:47:57.2985855+01:00"
-    },
-    {
       "Id": 6,
-      "Title": "12",
-      "Description": "wew",
-      "DueDate": "2024-12-12T00:00:00",
-      "Priority": "Medium",
-      "IsCompleted": true,
+      "Title": "Shoping",
+      "Description": "Buy a winter jacket",
+      "DueDate": "2024-11-20T00:00:00",
+      "Priority": "High",
+      "IsCompleted": false,
       "CreatedAt": "2024-11-20T13:32:09.0200134+01:00",
-      "CompletedAt": "2024-11-20T13:32:27.3870966+01:00"
+      "CompletedAt": "2024-11-20T14:40:39.0571729+01:00"
+    },
+    {
+      "Id": 7,
+      "Title": "eat",
+      "Description": "eat food",
+      "DueDate": "2024-11-20T00:00:00",
+      "Priority": "High",
+      "IsCompleted": true,
+      "CreatedAt": "2024-11-20T13:48:01.1718227+01:00",
+      "CompletedAt": "2024-11-20T13:49:14.6316543+01:00"
     }
   ]
 }

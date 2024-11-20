@@ -40,7 +40,7 @@ namespace ToDoListMed_generiskaKlassOchJson
                         toDoSystem.UpdateTask(toDoDB);
                         break;
                     case "4. Delete Task":
-                        //     toDoSystem.DeleteTask(toDoDB);
+                        toDoSystem.DeleteTask(toDoDB);
                         break;
                     case "5. Mark Tasks as Done":
                             toDoSystem.MarkTasksAsDone(toDoDB);
