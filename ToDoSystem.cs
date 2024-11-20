@@ -262,7 +262,12 @@ namespace ToDoListMed_generiskaKlassOchJson
         }
 
 
+        public void Exit(ToDoDB toDoDB) 
+        {
 
+            Environment.Exit(0);
+
+        }
 
 
         public void MarkTasksAsDone(ToDoDB toDoDB)
