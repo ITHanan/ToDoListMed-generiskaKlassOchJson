@@ -128,6 +128,9 @@ namespace ToDoListMed_generiskaKlassOchJson
         public void UpdateTask(ToDoDB toDoDB)
         {
             Console.Clear();
+
+            var TaskAdmin = new GeneriskaClass<Task>();
+
             ViewTasks(toDoDB);
             int id = AnsiConsole.Ask<int>("[green]Enter Task ID to Update:[/]");
 
@@ -190,13 +193,22 @@ namespace ToDoListMed_generiskaKlassOchJson
                 _ => "[grey]Unknown[/]" // Fallback, though it should not happen
             };
 
+            Task updatedTask = new(id, title, description, dueDate, priority, isCompleted, task.CompletedAt)
+            {
+                Id = task.Id,
+                Title = title,
+                Description = description,
+                DueDate = dueDate,
+                Priority = priority,
+                IsCompleted = isCompleted,
+                CreatedAt = task.CreatedAt,
+                CompletedAt = isCompleted ? DateTime.Now.ToLocalTime() : DateTime.Now,
+                //Set completed date if applicable
+            };
+
             // Update the task with new information
-            task.Title = title;
-            task.Description = description;
-            task.DueDate = dueDate;
-            task.IsCompleted = isCompleted ;
-            task.CompletedAt = isCompleted ? DateTime.Now.ToLocalTime() : DateTime.Now;
-            task.Priority = priority;  // Update the priority to the newly selected value
+            TaskAdmin.Updater(toDoDB.AllTaskDatafromToDoDB, updatedTask, t => t.Id);
+
 
             // Save changes to the database
             SaveAllData(toDoDB); // This method saves the updated task list
@@ -204,12 +216,47 @@ namespace ToDoListMed_generiskaKlassOchJson
             // Feedback and confirmation message
             AnsiConsole.MarkupLine("[green]Task updated successfully![/]");
             AnsiConsole.MarkupLine($"[yellow]Task Details Updated:[/]");
-            AnsiConsole.MarkupLine($"[blue]ID:[/] {task.Id}");
-            AnsiConsole.MarkupLine($"[blue]Title:[/] {task.Title}");
-            AnsiConsole.MarkupLine($"[blue]Description:[/] {task.Description}");
-            AnsiConsole.MarkupLine($"[blue]Due Date:[/] {task.DueDate.ToShortDateString()}");
-            AnsiConsole.MarkupLine($"[blue]Priority:[/] {levelOfTheStyledPriority}");
-            AnsiConsole.MarkupLine($"[blue]Status:[/] {(task.IsCompleted ? "[green]Completed[/]" : "[red]Pending[/]")}");
+            AnsiConsole.MarkupLine($"[blue]ID:[/] {updatedTask.Id}");
+            AnsiConsole.MarkupLine($"[blue]Title:[/] {updatedTask.Title}");
+            AnsiConsole.MarkupLine($"[blue]Description:[/] {updatedTask.Description}");
+            AnsiConsole.MarkupLine($"[blue]Due Date:[/] {updatedTask.DueDate.ToShortDateString()}");
+            AnsiConsole.MarkupLine($"[blue]Priority:[/] {updatedTask.Priority}");
+            AnsiConsole.MarkupLine($"[blue]Status:[/] {(updatedTask.IsCompleted ? "[green]Completed[/]" : "[red]Pending[/]")}");
+
+
+        }
+
+
+        public void DeleteTask(ToDoDB toDoDB)
+        {
+
+
+            Console.Clear();
+            var TaskAdmin = new GeneriskaClass<Task>();
+            ViewTasks(toDoDB);
+
+            foreach (var t in toDoDB.AllTaskDatafromToDoDB)
+            {
+                TaskAdmin.AddTo(t);
+
+            }
+
+
+
+            int IdTodelet = AnsiConsole.Ask<int>("[green]Enter Task ID to Delete:[/]");
+
+            var task = TaskAdmin.GetByID(IdTodelet);
+            if (task == null)
+            {
+                Console.WriteLine("not found");
+                return;
+            }
+
+            TaskAdmin.RemoveThis(IdTodelet);
+            toDoDB.AllTaskDatafromToDoDB = TaskAdmin.GetAll();
+            SaveAllData(toDoDB);
+            AnsiConsole.MarkupLine("[red]Task deleted successfully![/]");
+
 
 
         }
