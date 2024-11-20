@@ -1,0 +1,64 @@
+{
+  "Task": [
+    {
+      "Id": 1,
+      "Title": "Task 1",
+      "Description": "Complete the task",
+      "DueDate": "2024-11-18T12:00:00",
+      "Priority": "High",
+      "IsCompleted": true,
+      "CreatedAt": "2024-11-18T12:00:00",
+      "CompletedAt": "2024-11-20T11:22:32.6817909+01:00"
+    },
+    {
+      "Id": 2,
+      "Title": "Task 2",
+      "Description": "Finish coding project",
+      "DueDate": "2024-11-19T12:00:00",
+      "Priority": "Medium",
+      "IsCompleted": true,
+      "CreatedAt": "2024-11-18T12:00:00",
+      "CompletedAt": "0001-01-01T00:00:00"
+    },
+    {
+      "Id": 3,
+      "Title": "Math",
+      "Description": "do Q5 capter 3 Page number 109",
+      "DueDate": "2024-12-30T00:00:00",
+      "Priority": "Yes",
+      "IsCompleted": false,
+      "CreatedAt": "2024-11-20T10:04:57.1424013+01:00",
+      "CompletedAt": "2024-11-20T12:40:30.5407054+01:00"
+    },
+    {
+      "Id": 4,
+      "Title": "hy",
+      "Description": "ki",
+      "DueDate": "2024-12-30T00:00:00",
+      "Priority": "Medium",
+      "IsCompleted": false,
+      "CreatedAt": "2024-11-20T10:36:34.6916601+01:00",
+      "CompletedAt": "2024-11-20T13:20:34.2832571+01:00"
+    },
+    {
+      "Id": 5,
+      "Title": "Washing dishws",
+      "Description": "Wash the glasses and put them back in place",
+      "DueDate": "2024-11-25T00:00:00",
+      "Priority": "Medium",
+      "IsCompleted": false,
+      "CreatedAt": "2024-11-20T10:47:35.9962011+01:00",
+      "CompletedAt": "2024-11-20T10:47:57.2985855+01:00"
+    },
+    {
+      "Id": 6,
+      "Title": "12",
+      "Description": "wew",
+      "DueDate": "2024-12-12T00:00:00",
+      "Priority": "Medium",
+      "IsCompleted": true,
+      "CreatedAt": "2024-11-20T13:32:09.0200134+01:00",
+      "CompletedAt": "2024-11-20T13:32:27.3870966+01:00"
+    }
+  ]
+}
